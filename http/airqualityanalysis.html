@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Air Analysis Model</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="./css_lato.css">
+<link rel="stylesheet" href="./stylefiles/w3.css">
+<link rel="stylesheet" href="./stylefiles/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+ <link rel="stylesheet" href="./stylefiles/css/bootstrap.min.css">
+  <script src="./stylefiles/jquery.min.js"></script>
+  <script src="./stylefiles/popper.min.js"></script>
+  <script src="./stylefiles/bootstrap.min.js"></script>
+  
+
+
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+.linkk{
+color:white;
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+	<a href="water_main.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">WATER QUALITY</a>
+    <a href="air_main.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AIR QUALITY</a>
+    
+ <center> <h3>  Impact of Air Quality on Mortality Rates</h3></center>
+    
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+ 
+ 
+  
+  <div class="w3-section w3-light-grey w3-half">
+  
+  <h3 class="w3-green"> Enter the Parameters In Regression Model</h3>
+  
+  
+  <div>
+  <form action="javascript:predict();">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="ozone" required placeholder="Enter Ozone Quantity" name="ozone">
+	  <br>
+	        <input type="text" class="form-control" id="no2" required placeholder="Enter Nitrogen Dioxide Quantity" name="no2">
+		<br>
+			      <input type="text" class="form-control" id="pm10" required placeholder="Enter PM10 Quantity" name="pm10">
+						<br>
+				        <input type="text" class="form-control" id="pm25" required placeholder="Enter PM25 Quantity" name="pm25">
+							<br>
+						      <input type="text" class="form-control" id="temperature" required placeholder="Enter Coliform Quantity" name="temperature">
+									<br>
+							        
+
+    
+    <br>
+	<br>
+	
+    <button type="submit" class="btn btn-success">Predict Mortality</button>
+  </form>
+  
+  <hr/>
+  <h5 class="w3-blue;"> Classification Algorithm : Random Forest Ensemble : Model accuracy 92%</h5> 
+  </div>
+  
+
+</div> 
+  
+  </div>
+  
+  
+<div  class="w3-half">
+<br>
+  <h3 class="w3-green">Result Obtained<h3>
+
+  <br>
+  <br>
+  <div id="result">
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+<script type="text/javascript">
+
+        function setPicture(select) {
+            selectedvalue=select.value;
+           <!--  alert(selectedvalue); -->
+        }
+    </script>
+	  
+<script>
+
+$(document).ready(function(){
+    $("#disp1").click(function(){
+        $("#div1").fadeToggle(2000);
+       
+    });
+});
+
+
+
+</script>
+	  
+	  
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+<!-- Page content -->
+<br> 
+<br>
+<br>
+<br> 
+<br>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+<center>
+  <h3>EIA Project</h3>
+  <p>Water and Air Quality Analysis</a></p>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  </center>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function predict() {
+  var temp = document.getElementById('temperature').value;
+  var dox = document.getElementById('disoxy').value;
+  var nit = document.getElementById('nitrate').value;
+  var ph = document.getElementById('ph').value;
+  var cf = document.getElementById('coliform').value;
+  var bod = document.getElementById('bod').value;
+  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		var result = document.getElementById('result');
+		if(this.responseText == "0"){
+			result.innerHTML = "<i class=\"fa fa-frown-o  w3-margin-bottom w3-text-blue\" style=\"font-size:300px\"></i>" + 
+			"<i class=\"fa fa-times w3-margin-bottom w3-text-red\" style=\"font-size:300px\"></i>" +
+			"<h3 class=\"w3-text-red\">Poor water quality. Can have adverse ecosystems.<h3>"
+		}else{
+			result.innerHTML = "<i class=\"fa fa-smile-o  w3-margin-bottom w3-text-blue\" style=\"font-size:300px\"></i>" + 
+			"<i class=\"fa fa-check w3-margin-bottom w3-text-green\" style=\"font-size:300px\"></i>" +
+			"<h3 class=\"w3-text-green\">Acceptable water quality.</h3>"			
+		}
+    }
+  };
+  xhttp.open("GET", "/water?temp="+temp+"&do="+dox+"&ph="+ph+"&bod="+bod+"&nit="+nit+"&cf="+cf, true);
+  xhttp.send();
+}
+
+</script>
+
+</body>
+</html>
+
+

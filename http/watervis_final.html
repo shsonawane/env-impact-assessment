@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Visualization</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css_roboto.css">
+<link rel="stylesheet" href="./stylefiles/w3.css">
+<link rel="stylesheet" href="./stylefiles/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="./stylefiles/css/bootstrap.min.css">
+  <script src="./stylefiles/jquery.min.js"></script>
+  <script src="./stylefiles/popper.min.js"></script>
+  <script src="./stylefiles/bootstrap.min.js"></script>
+
+
+
+
+
+
+<script>
+
+<!-- FOR ORDER STATUS -->
+
+$(document).ready(function(){
+    $("#disp1").click(function(){
+		displayNone();
+        $("#div1").fadeToggle(1000); 
+    });
+});
+
+$(document).ready(function(){
+    $("#disp2").click(function(){
+		displayNone();
+        $("#div2").fadeToggle(1000);
+       
+    });
+});
+$(document).ready(function(){
+    $("#disp3").click(function(){
+        displayNone();
+		$("#div3").fadeToggle(1000);
+       
+    });
+});
+$(document).ready(function(){
+    $("#disp4").click(function(){
+        displayNone();
+		$("#div4").fadeToggle(1000);
+       
+    });
+});
+$(document).ready(function(){
+    $("#disp5").click(function(){
+        displayNone();
+		$("#div5").fadeToggle(1000);
+       
+    });
+});
+
+
+
+
+
+</script>
+
+
+
+<style>
+
+
+input[type=text] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+
+
+.button {
+    background-color:black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+background-color:grey;}
+	 
+	 
+	.footer {
+     font-size:70px;
+	 background-color: #470103;
+	 padding:20px40px;
+	 border:none;
+	 } 
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+
+
+<!-- -------------------   -->
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<!-- <body style="background-image: url('backgr1.png');" > -->
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="water_main.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Water Quality</a>
+    <a href="air_main.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Airquality</a>
+    
+	<center><h3 style="margin-top:6px;"> Analytical Visualization of Water Degredation </h3></center>
+  </div>
+</div>
+
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  
+  
+  
+  
+  
+  <h4 class="w3-bar-item"><b>Select State</b></h4>
+  
+  <a  id="disp1" class="w3-bar-item w3-button w3-hover-black" href="#">Rajasthan</a>
+  <a id="disp2" class="w3-bar-item w3-button w3-hover-black" href="#">Bihar</a>
+  <a id="disp3" class="w3-bar-item w3-button w3-hover-black" href="#">Assam</a>
+  <a id="disp4" class="w3-bar-item w3-button w3-hover-black" href="#">Orissa</a>
+  <a id="disp5" class="w3-bar-item w3-button w3-hover-black" href="#">West Bengal</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+
+
+
+  <div id="divmain" class="w3-row w3-padding-64">
+  
+  <br/>
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span><center><h1 class="w3-text-blue">Water Degredation All Over India and Maximal Affected States</h1></center></span>
+
+ <div class="w3-row-padding w3-center w3-margin-top">
+ 
+ <div id="div0" class="w3-half">
+  
+  <div class="w3-section w3-light-grey">
+  <img src="gif2.png" class="img-thumbnail" alt="Indiadegredationwater" width="500" height="500"> 
+</div>
+
+</div> 
+  
+  
+  
+<div  class="w3-half">
+  
+  <div id="div1" class="w3-section w3-light-grey hidden" style="display:none">
+  <img src="rajasthan_dist.png" class="img-thumbnail" alt="rajasdegredationwater" width="500" height="500"> 
+</div>
+
+<div id="div2" class="w3-section w3-light-grey" style="display:none">
+  <img src="bihar_dist.png" class="img-thumbnail" alt="bihardegredationwater" width="500" height="500"> 
+</div>
+
+<div id="div3" class="w3-section w3-light-grey" style="display:none">
+  <img src="assam_dist.png" class="img-thumbnail" alt="assamdegredationwater" width="500" height="500"> 
+</div>
+
+<div id="div4" class="w3-section w3-light-grey" style="display:none">
+  <img src="orissa_dist.png" class="img-thumbnail" alt="orissadegredationwater" width="500" height="500"> 
+</div>
+
+<div id="div5" class="w3-section w3-light-grey" style="display:none">
+  <img src="bengal_dist.png" class="img-thumbnail" alt="bengaldegredationwater" width="500" height="500"> 
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script>
+
+function displayNone(){
+	document.getElementById("div1").style.display = "none";
+	document.getElementById("div2").style.display = "none";
+	document.getElementById("div3").style.display = "none";
+	document.getElementById("div4").style.display = "none";
+	document.getElementById("div5").style.display = "none";
+}
+
+</script>
+
+
+  <br/>
+  <br/>
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer class="w3-container w3-theme-dark w3-padding-16">
+<center>
+  <h3>EIA Project</h3>
+  <p>Water and Air Quality Analysis</a></p>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  </center>
+</footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+

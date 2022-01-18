@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EIA Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./stylefiles/w3.css">
+<link rel="stylesheet" href="./stylefiles/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="./stylefiles/css/bootstrap.min.css">
+  <script src="./stylefiles/jquery.min.js"></script>
+  <script src="./stylefiles/popper.min.js"></script>
+  <script src="./stylefiles/bootstrap.min.js"></script>
+  
+  <style>
+  
+  .airtext{
+		color:green;
+  }
+  
+  </style>
+  
+  
+</head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-black w3-text-white">Navigate Through All Pages</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()"><h2>Close <i class="fa fa-remove"></i><h2></button>
+  <!-- Water Pages -->
+  
+  <a href="water_main.html" class="w3-bar-item w3-blue w3-button"><h3>Water Index Page</h3></a>
+  <a href="shubhamqualityanalysis.html" class="w3-bar-item w3-button"><h3>Water (Ensemble Model)</h3></a>
+  <a href="water_quality.html" class="w3-bar-item w3-blue w3-button"><h3>Quality Parameter</h3></a>
+  <a href="watervis_final.html" class="w3-bar-item w3-button"><h3>Water Visualization</h3></a>
+  <hr/>
+  <hr/>
+  <!-- AIR PAGES -->
+  <a href="air_main.html" class="w3-bar-item w3-green w3-button"><h3>Air Index Page</h3></a>
+  <a href="airqualityanalysis.html" class="w3-bar-item w3-button"><h3>Air (Regression Model)</h3></a>
+ <!-- <a href="watervis_final.html" class="w3-bar-item w3-button">AIR TEMP ?</a> -->
+  <a href="air_visualization.html" class="w3-bar-item w3-green w3-button"><h3>Air Visualization</h3></a>
+  
+  
+  
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>Environmental Impact Assessment</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">WATER AND AIR QUALITY ANALYSIS</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">
+        Contributors </button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+        <h5>Team : <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="w3-padding">
+        <pre>
+          - Shubham Sonawane
+          - Arneesh Aima
+		    </pre>
+      </div>
+      <footer class="w3-container w3-theme-l1">
+        <p>Water and Air Quality Analysis</p>
+      </footer>
+    </div>
+</div>
+
+<div class="w3-row-padding w3-center w3-margin-top">
+
+<div class="w3-half">
+  <div class="w3-card w3-container" style="min-height:300px">
+  <h3><a href="water_main.html">Water Quality Analysis</a></h3><br></a>
+ <a href="water_main.html"> <i class="fa fa-tint w3-margin-bottom w3-text-blue" style="font-size:120px"></i> </a>
+  <p>Water quality refers to the chemical, physical, biological, and radiological characteristics of water. It is a measure of the condition of water relative to the requirements of one or more biotic species and or to any human need or purpose.</p>
+  
+  </div>
+</div>
+
+<div class="w3-half">
+  <div class="w3-card w3-container" style="min-height:300px">
+  <h3><a href="air_main.html" class="airtext">Air Quality Analysis</a></h3><br>
+  <a href="air_main.html"><i class="fa fa-superpowers w3-margin-bottom w3-text-green" style="font-size:120px"></i> </a>
+  <p>“Air quality” refers to the condition of the air within our surrounding. Good air quality pertains to the degree which the air is clean, clear and free from pollutants such as smoke, dust and smog among other gaseous impurities in the air.</p>
+  
+  </div>
+</div>
+
+</div>
+<hr>
+
+
+<footer class="w3-container w3-theme-dark w3-padding-16">
+<center>
+  <h3>EIA Project</h3>
+  <p>Water and Air Quality Analysis</a></p>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  </center>
+</footer>
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "100%";
+    x.style.fontSize = "40px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+      activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+slideIndex = slideIndex + n;
+showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
