@@ -12,7 +12,7 @@ import pickle5 as pickle
  
 # load the model from disk
 filename = 'finalized_model.sav'
-#model = pickle.load(open(filename, 'rb'))
+model = pickle.load(open(filename, 'rb'))
 
 class MyHandler(SimpleHTTPRequestHandler):
     def do_HEAD(self):
